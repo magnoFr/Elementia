@@ -8,6 +8,7 @@ public class Game: SKScene {
     
     var tree : Tree?
     var deserto : Deserto?
+    var back : LabelGame?
     
     override public init(size: CGSize){
         super.init(size:size)
@@ -19,8 +20,16 @@ public class Game: SKScene {
     
         //Inicializando o deserto
         let desertPosition = CGPoint(x: 200, y: 200/2)
-        let desertSize = CGSize(width: CGFloat(width/2), height: CGFloat(width)/CGFloat(2.0))
+        let desertSize = CGSize(width: CGFloat(width)/CGFloat(1.5), height: CGFloat(width)/CGFloat(2.0))
         self.deserto = Deserto(position: desertPosition, size: desertSize, parent: self)
+        
+        //Inicializando o menu de topo
+        let backPosition = CGPoint(x: 200, y: 7*height/10)
+        let backSize = CGSize(width: CGFloat(width)/CGFloat(1.5), height: CGFloat(width)/CGFloat(9.5))
+        self.back = LabelGame(position: backPosition, size: backSize, parent: self)
+        
+        
+        
     }
 
     required public init?(coder aDecoder: NSCoder) {
